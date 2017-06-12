@@ -3,17 +3,21 @@ $:.push File.expand_path("../lib", __FILE__)
 require "data_migrate/version"
 
 Gem::Specification.new do |s|
-  s.name        = "data_migrate"
+  s.name        = "salsify-data_migrate"
   s.version     = DataMigrate::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Andrew J Vargo", "Ilya Katz"]
-  s.email       = ["ajvargo@computer.org", "ilyakatz@gmail.com"]
-  s.homepage    = "https://github.com/ilyakatz/data-migrate"
+  s.authors     = ['Salsify, Inc']
+  s.email       = ['engineering@salsify.com']
+  s.homepage    = 'https://github.com/salsify/data-migrate'
   s.summary     = %q{Rake tasks to migrate data alongside schema changes.}
   s.description = %q{Rake tasks to migrate data alongside schema changes.}
   s.license     = "MIT"
 
-  s.rubyforge_project = "data_migrate"
+  if s.respond_to?(:metadata)
+    s.metadata['allowed_push_host'] = 'https://gems.salsify.com'
+  else
+    raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
+  end
 
   s.add_dependency('rails', '>= 4.0', '< 5.1')
   s.add_development_dependency "appraisal"
