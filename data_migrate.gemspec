@@ -13,12 +13,6 @@ Gem::Specification.new do |s|
   s.description = %q{Rake tasks to migrate data alongside schema changes.}
   s.license     = "MIT"
 
-  if s.respond_to?(:metadata)
-    s.metadata['allowed_push_host'] = 'https://gems.salsify.com'
-  else
-    raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
-  end
-
   s.add_dependency('rails', '>= 4.0', '< 5.1')
   s.add_development_dependency "appraisal"
   s.add_development_dependency "rake"
